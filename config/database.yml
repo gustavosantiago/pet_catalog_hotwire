@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: utf-8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: pet_catalog_hotwire_development
+  username: pet_catalog
+  password: pet_catalog
+  host: postgres
+  port: 5432
+
+test:
+  <<: *default
+  database: pet_catalog_hotwire_test
