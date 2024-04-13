@@ -1,0 +1,37 @@
+<div class="mt-4">
+  <div class="card">
+    <div class="card-body">
+      <%= simple_form_for @pet, html: { class: "form" } do |f| %>
+        <div id="form-errors">
+          <%= render 'layouts/shared/errors', errors: nil %>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <%= f.input :name, id: "name", class: "form-control form-control-lg" %>
+            <%= f.error :name %>
+          </div>
+
+          <div class="col">
+            <%= f.input :breed, id: "breed", class: "form-control" %>
+            <%= f.error :breed %>
+          </div>
+
+          <div class="col">
+            <%= f.input :url, id: "url", class: "form-control form-control-lg" %>
+            <%= f.error :url %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <%= f.input :description, as: :text, id: "description", class: "form-control form-control-lg" %>
+            <%= f.error :description %>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

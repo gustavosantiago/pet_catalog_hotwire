@@ -1,0 +1,7 @@
+<div class="container">
+  <%= turbo_frame_tag "list_pets" do %>
+    <%= page_header(title: 'Edit Pet') %>
+
+    <%= render partial: 'form', pet: @pet %>
+  <% end %>
+</div>

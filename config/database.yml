@@ -8,8 +8,10 @@ development:
   database: pet_catalog_hotwire_development
   username: pet_catalog
   password: pet_catalog
-  host: postgres
-  port: 5432
+  # host: postgres
+  # port: 5432
+  host: 127.0.0.1
+  port: 5435
 
 test:
   <<: *default

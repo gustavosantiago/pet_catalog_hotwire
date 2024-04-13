@@ -1,0 +1,19 @@
+<div class="container">
+  <%= turbo_frame_tag "list_pets" do %>
+    <%= page_header(title: 'Pets') %>
+
+    <div class="row me-2 mb-4">
+      <div class="col text-end">
+        <%= link_to "New pet", new_pet_path, class: "btn btn-primary", data: { turbo_prefetch: false, turbo_frame: "list_pets" } %>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <% @pets.each do |pet| %>
+        <%= turbo_frame_tag "pet_#{pet.id}" do %>
+          <%= render partial: 'pet', locals: { pet: pet } %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
